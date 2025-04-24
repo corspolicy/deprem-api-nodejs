@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Deprem API Dökümantasyonu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      padding: 20px;
+    }
+    h1 {
+      color: #007bff;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    pre {
+      background-color: #e0e0e0;
+      padding: 10px;
+      border-radius: 5px;
+      color: #eb2222;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    footer {
+      text-align: center;
+      margin-top: 20px;
+    }
+    ul {
+      list-style-type: none;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    code {
+      background-color: #f1df8d;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Deprem API Dökümantasyonu</h1>
+    <p>Bu API, Türkiye'deki depremleri KOERI (Boğaziçi Üniversitesi) sayfasından çeker. Son depremler, geçmiş veriler ve cache tabanlı yanıtlar sunar. Aşağıda, API'yi nasıl kullanabileceğinizi açıklayan bilgiler bulunmaktadır.</p>
+
+    <h2>API Endpoints</h2>
+    <ul>
+      <li>
+        <strong><code>/api/tum</code></strong> - Tüm depremleri listeler.<br>
+        <code>GET</code> isteği ile tüm depremler JSON formatında dönecektir.
+      </li>
+      <li>
+        <strong><code>/api/son</code></strong> - Son depremi getirir.<br>
+        <code>GET</code> isteği ile son depremin verisi dönecektir.
+      </li>
+      <li>
+        <strong><code>/api/son/:adet</code></strong> - Belirli sayıda son depremi listeler.<br>
+        <code>GET</code> isteği ile, parametre olarak verilen adet kadar son deprem bilgisi dönecektir. Örnek: `/api/son/5`.<br>
+      </li>
+    </ul>
+
+    <h2>Örnek API Yanıtı</h2>
+    <pre>
+      
+        {
+          "tarih": "2025.04.24",
+          "saat": "02:39:03",
+          "enlem": "40.8578",
+          "boylam": "28.3930",
+          "derinlik_km": "10",
+          "buyukluk": "4.3",
+          "konum": "MARMARA DENIZI - Tekirdağ"
+        }
+      
+    </pre>
+
+    <h2>API Yanıt Açıklamaları</h2>
+    <ul>
+      <li><strong><code>tarih</code></strong>: Depremin tarihi.</li>
+      <li><strong><code>saat</code></strong>: Depremin saati.</li>
+      <li><strong><code>enlem</code></strong>: Depremin enlem koordinatı.</li>
+      <li><strong><code>boylam</code></strong>: Depremin boylam koordinatı.</li>
+      <li><strong><code>derinlik_km</code></strong>: Depremin derinliği (km cinsinden).</li>
+      <li><strong><code>buyukluk</code></strong>: Depremin büyüklüğü.</li>
+      <li><strong><code>konum</code></strong>: Depremin konumu veya açıklaması.</li>
+    </ul>
+
+    <footer>
+      <p>Deprem API | Sunucu Çalışıyor | <a href="https://posgen.info" target="_blank">PosgenApp</a></p>
+    </footer>
+  </div>
+</body>
+</html>

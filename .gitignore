@@ -1,0 +1,23 @@
+# MacOS specific
+.DS_Store
+
+# Windows specific
+Thumbs.db
+
+# Logs
+*.log
+
+# Dependency directories
+node_modules/
+
+# Build directories
+dist/
+build/
+out/
+
+# IDEs
+.idea/
+.vscode/
+
+# Environment files
+.env
