@@ -88,3 +88,7 @@ app.get('/api/durum', (req, res) => {
     cache_kalan_sure_sn: cache.data ? Math.max(0, Math.floor((cache.duration - (Date.now() - cache.timestamp)) / 1000)) : 'yok' 
   })
 })
+
+app.listen(3000).then(() => {
+  console.log('sunucu ayağa kalktı') 
+})
